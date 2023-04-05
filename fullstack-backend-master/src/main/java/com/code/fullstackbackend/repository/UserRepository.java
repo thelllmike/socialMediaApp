@@ -1,7 +1,8 @@
-package com.codewitharjun.fullstackbackend.repository;
+package com.code.fullstackbackend.repository;
 
-import com.codewitharjun.fullstackbackend.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.code.fullstackbackend.model.User;
 
 public interface UserRepository extends JpaRepository<User,Long> {
 }

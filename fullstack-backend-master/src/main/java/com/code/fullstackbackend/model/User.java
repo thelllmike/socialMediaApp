@@ -1,10 +1,10 @@
-package com.codewitharjun.fullstackbackend.model;
+package com.code.fullstackbackend.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-/* Created by Arjun Gautam */
+
 @Entity
 public class User {
 

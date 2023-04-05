@@ -1,8 +1,9 @@
-package com.codewitharjun.fullstackbackend.controller;
+package com.code.fullstackbackend.controller;
 
-import com.codewitharjun.fullstackbackend.exception.UserNotFoundException;
-import com.codewitharjun.fullstackbackend.model.User;
-import com.codewitharjun.fullstackbackend.repository.UserRepository;
+import com.code.fullstackbackend.exception.UserNotFoundException;
+import com.code.fullstackbackend.model.User;
+import com.code.fullstackbackend.repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
