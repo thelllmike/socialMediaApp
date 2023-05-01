@@ -40,6 +40,9 @@ public class UserController {
                     user.setUsername(newUser.getUsername());
                     user.setName(newUser.getName());
                     user.setEmail(newUser.getEmail());
+                    user.setDob(newUser.getDob());
+                    user.setCpassword(newUser.getCpassword());
+                    user.setPassword(newUser.getPassword());
                     return userRepository.save(user);
                 }).orElseThrow(() -> new UserNotFoundException(id));
     }
@@ -53,6 +56,17 @@ public class UserController {
         return  "User with id "+id+" has been deleted success.";
     }
 
+//    @PostMapping("/login")
+//    User loginUser(@RequestBody User user) {
+//        return userRepository.findByEmailAndPassword(user.getEmail(), user.getPassword())
+//                .orElseThrow(() -> new UserNotFoundException());
+//    }
+
+//    @PostMapping("/login")
+//    User loginUser(@RequestBody User user) {
+//        return userRepository.findByEmailAndPassword(user.getEmail(), user.getPassword())
+//                .orElseThrow(() -> new UserNotFoundException());
+//    }
 
 
 }

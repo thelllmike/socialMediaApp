@@ -14,8 +14,27 @@ public class User {
     private String username;
     private String name;
     private String email;
+    private String password;
+    private String cpassword;
+    private String dob;
 
-    public Long getId() {
+    public String getCpassword() {
+		return cpassword;
+	}
+
+	public void setCpassword(String cpassword) {
+		this.cpassword = cpassword;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -43,7 +62,15 @@ public class User {
         return email;
     }
 
-    public void setEmail(String email) {
+    public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setEmail(String email) {
         this.email = email;
     }
 }
