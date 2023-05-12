@@ -14,7 +14,14 @@ public class Post {
     private String location;
     private String description;
     private String hashtag;
+    private String comment;
     
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
 	public Long getId() {
 		return id;
 	}

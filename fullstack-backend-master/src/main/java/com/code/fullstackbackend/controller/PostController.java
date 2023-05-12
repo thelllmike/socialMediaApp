@@ -45,6 +45,7 @@ public class PostController {
                 	post.setLocation(newPost.getLocation());
                 	post.setDescription(newPost.getDescription());
                 	post.setHashtag(newPost.getHashtag());
+                	post.setComment(newPost.getComment());
                     return postRepository.save(post);
                 }).orElseThrow(() -> new PostNotFoundException(id));
     }

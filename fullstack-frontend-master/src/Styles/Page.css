@@ -1,0 +1,170 @@
+.Page {
+	margin: 0;
+	padding: 0;
+	/* background-color: #e0d9d9e5; */
+}
+.Page {
+	height: 100vh;
+	/* display: flex; */
+	/* overflow: hidden; */
+	align-items: center;
+	justify-content: center;
+	/* background-color: #141225; */
+}
+.Page .inFormBackground {
+	margin: 0rem 2rem;
+}
+.Page .inFormBackground,
+.Page .Form {
+	width: 25rem;
+	height: 30rem;
+	max-width: 320px;
+	position: relative;
+}
+.Page .circle {
+	width: 10rem;
+	height: 10rem;
+	position: absolute;
+	border-radius: 50%;
+}
+.Page .circle:first-child {
+	left: 110%;
+	top: -12%;
+	background: linear-gradient(#ff0060, #c302b5);
+}
+.Page .circle:nth-child(2) {
+	right: -192%;
+	bottom: -14%;
+	background: linear-gradient(164deg, #144e7cfc, #1877f2);
+}
+.Page .Form form {
+	top: 70%;
+	left: 200%;
+	width: 22rem;
+	/* height: auto; */
+	/* max-width: ; */
+	position: absolute;
+	padding: 2rem;
+	border-radius: 10px;
+	backdrop-filter: blur(5px);
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+	border: 2px solid rgba(189, 185, 185, 0.1);
+	background-color: rgba(153, 152, 152, 0.13);
+}
+.Page form * {
+	border: none;
+	outline: none;
+	color: #3d3b3b;
+	letter-spacing: 0.5px;
+}
+.Page .title {
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 1.6rem;
+	text-align: center;
+}
+.Page .inputGroup label {
+	display: block;
+	margin-bottom: 0.8rem;
+	margin-left: 0.8rem;
+	font-size: 1rem;
+	font-weight: 500;
+}
+.Page .inputGroup input {
+	width: 92%;
+	height: 2.6rem;
+	display: block;
+	padding: 0 0.8rem;
+	/* margin-top: 6px; */
+	font-size: 1rem;
+	font-weight: 300;
+	border-radius: 3px;
+	background-color: rgba(255, 255, 255, 0.07);
+	border: 1px solid #00000031;
+	border-radius: 2rem;
+	margin-bottom: 1rem;
+	padding-left: 1rem;
+}
+.Page ::placeholder {
+	color: #4b4848;
+}
+.Page .submitForm {
+	width: 100%;
+	z-index: 1;
+	margin-top: 1rem;
+	color: #d1d0d3;
+	padding: 1rem 0;
+	font-size: 18px;
+	font-weight: 600;
+	cursor: pointer;
+	overflow: hidden;
+	border-radius: 30px;
+	position: relative;
+	background: #3b3a3a;
+}
+.Page .submitForm::before {
+	content: "";
+	top: 0%;
+	left: -100%;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	color: #464545;
+	border-radius: 15px;
+	position: absolute;
+}
+
+.Page .social {
+	display: flex;
+	margin-top: 2rem;
+	align-items: center;
+	justify-content: center;
+}
+.Page .social div {
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	cursor: pointer;
+	color: #353535;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(255, 251, 251, 0.27);
+	border: 2px solid #cacaca;
+}
+.Page .social div:hover {
+	background-color: rgba(218, 218, 218, 0.47);
+}
+.Page .social .fb {
+	margin-left: 2rem;
+}
+.Page .social .tw {
+	margin-left: 2rem;
+}
+
+.Page .Form a.link {
+	display: block;
+	margin-left: 4rem;
+	margin-top: 2rem;
+}
+
+[data-theme="dark"] .Page .title h3 {
+	color: #ece7e7;
+}
+
+[data-theme="dark"] .Page ::placeholder {
+	color: #e5e5e5;
+}
+
+[data-theme="dark"] .Page .submitForm {
+	background-color: #ececec28;
+}
+
+[data-theme="dark"] .Page form * {
+	color: #ffffff;
+}
+
+[data-theme="dark"] .Page .social div {
+	border: 2px solid #ececec28;
+}

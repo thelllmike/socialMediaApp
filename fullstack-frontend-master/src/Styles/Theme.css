@@ -1,0 +1,41 @@
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #646060;
+    padding: 0.5rem;
+    margin-left: 95%;
+   
+    display: block;
+    position: relative;
+     bottom: 4.5rem;
+  
+  }
+
+  .theme img {
+    width: 7%;
+  }
+  
+  .theme-toggle:hover {
+    /* color: #fff; */
+  }
+  
+  [data-theme='dark'] .theme-toggle {
+    color: rgb(221, 217, 217)808616;
+  }
+
+  [data-theme="dark"] {
+    background-color: #0A192F;
+    color: #dfdcdc;
+  }
+  
+  [data-theme="light"] {
+    /* Styles for light mode */
+  }
+
+  
+
+
+  
+  

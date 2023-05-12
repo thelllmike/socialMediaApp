@@ -26,7 +26,7 @@ export default function EditPost() {
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios.put(`http://localhost:8080/post/${id}`, post);
-    navigate("/allpost");
+    navigate("/PostViewPage");
   };
 
   const loadPost = async () => {
