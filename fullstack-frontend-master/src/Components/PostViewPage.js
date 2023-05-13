@@ -104,17 +104,11 @@ function PostViewPage() {
 					</td>
 				</tr>
 
+			
 				<tr className='comments-section' rowSpan={2}>
 					<td className='comment-area'>
 						<div className='comment'>
-							<p> comment</p>
-						</div>
-					</td>
-				</tr>
-				<tr className='comments-section' rowSpan={2}>
-					<td className='comment-area'>
-						<div className='comment'>
-							<p>comment</p>
+							<p>	{post.comment}</p>
 						</div>
 						<br/>
 					</td>
