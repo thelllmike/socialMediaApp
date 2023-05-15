@@ -11,6 +11,7 @@ export default function EditPost() {
     location: "",
     description: "",
     hashtag: "",
+   
   });
 
   const { location, description, hashtag } = post;
@@ -85,6 +86,10 @@ export default function EditPost() {
               />
 
             </div>
+
+
+
+
             <button type="submit" className="btn btn-outline-primary">
               Submit
             </button>

@@ -11,6 +11,7 @@ import ViewUser from "./users/ViewUser";
 import PostViewPage from "./Components/PostViewPage";
 import AddPost from "./users/AddPost";
 import EditPost from "./users/EditPost";
+import Comment from "./Components/Comment";
 import ViewPost from "./users/ViewPost";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/AddPost" element={<AddPost />} />
           <Route exact path="/allpost" element={<AllPost />} />
           <Route exact path="/editPost/:id" element={<EditPost />} />
+          <Route exact path="/Comment/:id" element={<Comment />} />
           <Route exact path="/viewPost/:id" element={<ViewPost />} />
 
         </Routes>

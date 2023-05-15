@@ -10,20 +10,37 @@ import Comment from "./Comment";
 
 
 function PostViewPage() {
+	let navigate = useNavigate();
 	const [posts, setPosts] = useState([]);
 	// let navigate = useNavigate();
 	const { id } = useParams();
-  
+    
+  const [post, setPost] = useState({
+    comment: "",
+    
+  });
+  const { comment} = post;
+
+  const onInputChange = (e) => {
+    setPost({ ...post, [e.target.name]: e.target.value });
+  };
+
+
+
 	useEffect(() => {
 	  loadPosts();
 	}, []);
 
-	// const onSubmit = async (e) => {
-	// 	e.preventDefault();
-	// 	await axios.put(`http://localhost:8080/post/${id}`, post);
-	// 	navigate("/allpost");
-	//   };
-  
+	useEffect(() => {
+		loadPost();
+	  }, []);
+	
+
+	const loadPost = async () => {
+		const result = await axios.get(`http://localhost:8080/post/${id}`);
+		setPost(result.data);
+	  };
+
 	const loadPosts = async () => {
 	  const result = await axios.get("http://localhost:8080/posts");
 	  setPosts(result.data);
@@ -35,7 +52,7 @@ function PostViewPage() {
 	};
 
 	const [liked, setliked] = useState(false);
-	const [showComment, setShowComment] = useState(false);
+	// const [showComment, setShowComment] = useState(false);
 
 	//save icons to variables
 	const fanormal = <i class='fa-regular fa-heart'></i>;
@@ -46,9 +63,16 @@ function PostViewPage() {
 		setliked(!liked);
 	};
 
-	const handleButtonClick = () => {
-		setShowComment(!showComment);
-	  }
+	// const handleButtonClick = () => {
+	// 	setShowComment(!showComment);
+	//   }
+
+	const onSubmit = async (e) => {
+		e.preventDefault();
+		await axios.put(`http://localhost:8080/post/${id}`, post);
+		navigate("/PostViewPage");
+	  };
+	
 	
 
 	return (
@@ -94,23 +118,86 @@ function PostViewPage() {
 					<td className='like-button' onClick={handleClick}>
 						{liked ? faliked : fanormal}
 					</td>
-
-					<td className='comment-button'>
-					<i className="fa-regular fa-comment" onClick={handleButtonClick}></i>
-      {showComment && <Comment />}
-					</td>
+				
+				
 					<td className='share-button'>
 						<i class='fa-solid fa-share'></i>
 					</td>
 				</tr>
+				<tr className='post-content'>
+					<td colSpan={2}>
+						<p>
+						{/* {post.description} */}
+						<input
+                type={"text"}
+                className="form-control"
+                placeholder="Comment"
+                name="description"
+			
+                value={post.comment}
+             
+              />
+						</p>			
+						{/* <td><Link
+											className='btn btn-outline-primary mx-2'
+											to={`/editpost/${post.id}`}>
+											comment
+										</Link></td>
+										 */}
+					</td>
+					<td>
+					<Link    
+					className='btn btn-outline-primary mx-2'
+					to={`/Comment/${post.id}`}>
+					comment
+				   </Link></td>
+				</tr>
+
+
+				{/* <tr className='post-content'>
+				<td>
+				<form onSubmit={(e) => onSubmit(e)}> 
+				<div>
+				
+				<input
+                type={"text"}
+                className="form-control"
+                placeholder="Comment"
+                name="description"
+			
+                value={post.comment}
+                onChange={(e) => onInputChange(e)}
+              />
+      
+    </div>
+	<button type="submit" className="btn btn-outline-primary">
+              Submit
+            </button>
+
+			</form>
+			</td>
+			</tr> */}
+			
 
 			
-				<tr className='comments-section' rowSpan={2}>
-					<td className='comment-area'>
-						<div className='comment'>
-							<p>	{post.comment}</p>
-						</div>
-						<br/>
+{/* <tr className='post-content'>
+  <td>
+    <Comment
+      comment={comment}
+      onInputChange={onInputChange}
+      onSubmit={onSubmit}
+    />
+  </td>
+</tr> */}
+
+
+				<br/><br/>
+
+				<tr className='post-content'>
+					<td colSpan={2}>
+						<p>
+						{post.post}
+						</p>
 					</td>
 				</tr>
 

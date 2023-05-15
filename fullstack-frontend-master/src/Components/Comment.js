@@ -1,19 +1,18 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import '../Styles/Comment.css'
 
-function Comment() {
+export default function EditPost() {
   let navigate = useNavigate();
 
   const { id } = useParams();
 
   const [post, setPost] = useState({
     comment: "",
-    
+   
   });
 
-  const { comment} = post;
+  const { comment } = post;
 
   const onInputChange = (e) => {
     setPost({ ...post, [e.target.name]: e.target.value });
@@ -35,16 +34,37 @@ function Comment() {
   };
 
   return (
-    <form onSubmit={(e) => onSubmit(e)}> 
-    <div>
-        <textarea name="" id="" cols="30" rows="2"   value={comment}
-                onChange={(e) => onInputChange(e)}></textarea>
-    </div>
-    <button type="submit" className="btn btn-outline-primary">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
+          <h2 className="text-center m-4">ADD Comment</h2>
+
+          <form onSubmit={(e) => onSubmit(e)}>
+          
+            <div className="mb-3">
+              <label htmlFor="Name" className="form-label">
+                
+              </label>
+              <input
+                type={"text"}
+                className="form-control"
+                placeholder="comment"
+                name="comment"
+                value={comment}
+                onChange={(e) => onInputChange(e)}
+              />
+            </div>
+         
+          
+            <button type="submit" className="btn btn-outline-primary">
               Submit
             </button>
-    </form>
-  )
+            <Link className="btn btn-outline-danger mx-2" to="/">
+              Cancel
+            </Link>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 }
-
-export default Comment
